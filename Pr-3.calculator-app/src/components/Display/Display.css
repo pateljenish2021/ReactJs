@@ -1,0 +1,28 @@
+html{
+  background-color: #303030;
+}
+.display {
+  background: #1c1c1c;
+  color: #fff;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 5px;
+  height: 80px;
+}
+
+.calculation {
+  font-size: 2rem;
+  color: #cacaca; 
+  word-wrap: break-word;
+}
+
+.result {
+  font-size: 2rem;
+  color: #fff;
+  word-wrap: break-word;
+}
