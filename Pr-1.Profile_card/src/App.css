@@ -1,0 +1,14 @@
+.card-row {
+  display: flex;
+  justify-content: space-between; 
+  gap: 50px;
+  flex-wrap: wrap; 
+  margin: 0px auto;
+  max-width: 1050px; 
+}
+
+.user-profile-card {
+  flex: 1; 
+  width: 500px; 
+  cursor: pointer;
+}
