@@ -4,12 +4,11 @@
   gap: 50px;
   flex-wrap: wrap; 
   margin: 0px auto;
-  max-width: 850px; 
+  max-width: 1050px; 
 }
 
 .user-profile-card {
   flex: 1; 
-  min-width: 300px; 
-  max-width: 400px; 
+  width: 500px; 
   cursor: pointer;
 }

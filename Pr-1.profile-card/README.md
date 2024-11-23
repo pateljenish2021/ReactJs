@@ -1,1 +1,5 @@
-![alt text](screenshots/screenshot-1.bmp)
+![alt text](screenshots/capture_20241123214454319.bmp)
+
+HOVER ANIMATION
+
+![alt text](screenshots/capture_20241123214513388.bmp)
