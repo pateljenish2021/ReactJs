@@ -1,0 +1,53 @@
+body{
+    background-image: linear-gradient(to top, #00c6fb 0%, #005bea 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+} 
+.count {
+    font-size: 500px;
+    font-weight: bold;
+    width: 2rem;
+    text-align: center;
+    color: white;
+}
+button{
+    border: none;
+}
+.btn {
+    font-size: 150px;
+    cursor: pointer;
+    background-color: transparent;
+    color: white;
+}
+button:focus, button:focus-visible {
+    outline: none;
+}
+button:hover {
+    border-color: none;
+}
+.decrement-btn{
+    position: absolute;
+    top: 29.5%;
+    left: 10%;
+}
+.increment-btn{
+    position: absolute;
+    top: 39%;
+    right: 10%;
+}
+#zero{
+    position: absolute;
+    top: 3%;
+    left: 40.5%;
+    font-size: 20px;
+    background-color: rgb(231, 109, 109);
+    padding: 20px 50px;
+    border-radius: 20px;
+    color: #fff;
+    display: none;
+}
