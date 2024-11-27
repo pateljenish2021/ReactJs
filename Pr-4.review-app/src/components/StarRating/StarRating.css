@@ -1,0 +1,18 @@
+.star-rating {
+    display: flex;
+    gap: 5px;
+  }
+  
+  .star {
+    font-size: 30px;
+    cursor: pointer;
+    margin-bottom: 7px;
+  }
+  
+  .star.filled {
+    color: gold;
+  }
+  
+  .star[disabled] {
+    cursor: default;
+  } 

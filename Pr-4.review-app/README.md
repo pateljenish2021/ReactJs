@@ -1,0 +1,11 @@
+USER INTERFACE
+
+![alt text](capture_20241127204311313.bmp)
+
+SINGLE REVIEW
+
+![alt text](capture_20241127204359111.bmp)
+
+MULTIPLE REVIEW OFFCANVAS
+
+![alt text](capture_20241127204638223.bmp)

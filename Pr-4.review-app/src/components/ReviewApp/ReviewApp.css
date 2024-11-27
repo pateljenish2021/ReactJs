@@ -1,0 +1,62 @@
+.form-container {
+    width: 500px;
+    padding: 20px;  
+    margin-bottom: 20px;
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 15px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); 
+    -webkit-backdrop-filter: blur(15px);
+    backdrop-filter: blur(10px);
+    margin-top: -40px;
+
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  label {
+    letter-spacing: 0.5px;
+    display: block;
+    margin-bottom: 8px;
+  }
+  
+  input,
+  textarea {
+    font-weight: 600;
+    font-size: 16px;
+    width: 95%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+  }
+  
+  .submit-btn {
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-size: 17px;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 7px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); 
+    -webkit-backdrop-filter: blur(15px);
+    backdrop-filter: blur(15px);
+    transition: all 0.25s ease-in-out;
+  }
+  
+  .submit-btn:hover {
+    background-color: #232363;
+  }  
+  .star-form-group{
+    display: flex;
+    align-items: center;
+    padding: 0px 0px 15px 0px;
+  }
+  .star-form-group label{
+    margin-bottom:0px;
+    margin-right: 10px;
+  }
