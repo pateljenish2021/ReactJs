@@ -11,7 +11,7 @@ import { async } from '@firebase/util';
 
 function ViewAccounts() {
 
-  const [documents, setDocuments] = useState([])   //key line for understanding these basic Hooks
+  const [documents, setDocuments] = useState([]) 
   const [isLoading, setIsLoading] = useState(true)
   const { user } = useContext(AuthenticatedContext)
   const [docId, setDocId] = useState("")
@@ -25,11 +25,11 @@ function ViewAccounts() {
 
     const accountsRef = collection(firestore, "accounts");
     const q = query(accountsRef, where("createdBy.uid", "==", user.uid));
-    const querySnapshot = await getDocs(q);  // Note: Key line for Reading data
+    const querySnapshot = await getDocs(q);  
 
     querySnapshot.forEach((doc) => {
       // console.log(doc.data().userId)
-      array.push(doc.data())   //Also must Note this line
+      array.push(doc.data())   
     });
 
     setDocuments(array)
@@ -37,7 +37,7 @@ function ViewAccounts() {
     // console.log(documents)
   }
 
-  useEffect(() => {     //Note this point carefully also
+  useEffect(() => {     
     readDocs()
   }, [])
 
@@ -47,8 +47,7 @@ function ViewAccounts() {
   }
 
   const handleDelete = async () => {
-    // console.log("Deleting file", docId);
-    // setIsLoading(true);
+   
     await deleteDoc(doc(firestore, "accounts", docId));
     toast.success("Account Deleted Successfuly!", {
       position: "top-right",
@@ -67,23 +66,23 @@ function ViewAccounts() {
   }
 
   const handleDepositChange = e => {
-    setIsDepositAmount({ ...isDepositAmount, [e.target.name]: e.target.value })   //what does this line   Confusion!  
+    setIsDepositAmount({ ...isDepositAmount, [e.target.name]: e.target.value })    
     // console.log(isDepositAmount)
   }
 
   const handleWithdrawChange = e => {
-    setIsWithdrawAmount({ ...isWithdrawAmount, [e.target.name]: e.target.value })   //what does this line   Confusion!  
+    setIsWithdrawAmount({ ...isWithdrawAmount, [e.target.name]: e.target.value })     
     // console.log(isWithdrawAmount)
   }
 
 
   const handleDeposit = async () => {
 
-    let newDocument = documents.find((object) => {   // will store selected object using find method
+    let newDocument = documents.find((object) => {   
       return docId == object.id;
     })
 
-    const { depositAmount } = isDepositAmount //destructuring used here
+    const { depositAmount } = isDepositAmount 
     const { initialDeposit } = newDocument
 
     // console.log(withdrawAmount)
@@ -120,9 +119,6 @@ function ViewAccounts() {
         uid: user.uid
       }
     }
-    // if(initialDeposit <= newDocument.initialDeposit){
-    //   transactionData.type = 'debit';
-    // }
     try {
       await setDoc(doc(firestore, "transactions", transactionData.id), transactionData)
       // console.log("Transaction done", transactionData)   
@@ -143,9 +139,6 @@ function ViewAccounts() {
     })
     setDocuments(updatedArray)
 
-
-    // console.log(depositAmount)
-    // const docRef = doc(firestore, "accounts", docId);
     await setDoc(doc(firestore, "accounts", docId), newDocument);
     toast.success("Amount Deposited Successfuly!", {
       position: "top-right",
@@ -163,7 +156,7 @@ function ViewAccounts() {
 
 
     
-    let newDocument = documents.find((object) => {   // will store selected object using find method
+    let newDocument = documents.find((object) => {  
       return docId == object.id;
     })
     
@@ -171,7 +164,7 @@ function ViewAccounts() {
 
 
 
-    const { withdrawAmount } = isWithdrawAmount //destructuring used here
+    const { withdrawAmount } = isWithdrawAmount 
     const { initialDeposit } = newDocument
     // console.log(withdrawAmount)
     if (parseInt(withdrawAmount) < 0) {
@@ -189,9 +182,6 @@ function ViewAccounts() {
       return;
     }
     
-
-    // console.log(newDocument.initialDeposit)
-    // console.log(withdrawAmount)
     if (parseInt(withdrawAmount) > parseInt(newDocument.initialDeposit)) {
       toast.error("Your account has insufficient balance", {
         position: "top-right",
@@ -223,9 +213,7 @@ function ViewAccounts() {
         uid: user.uid
       }
     }
-    // if(initialDeposit <= newDocument.initialDeposit){
-    //   transactionData.type = 'debit';
-    // }
+
     try {
       await setDoc(doc(firestore, "transactions", transactionData.id), transactionData)
       console.log("Transaction done", transactionData)
