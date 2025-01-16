@@ -1,7 +1,6 @@
 import React, { useState, useContext } from 'react'
 import { firestore } from '../../../Config/Firebase';
 import { serverTimestamp, setDoc, doc } from "firebase/firestore";
-// import { async } from '@firebase/util';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import dayjs from 'dayjs';
@@ -30,7 +29,7 @@ function CreateAccounts() {
 
   const [state, setState] = useState(initialState);
   const handleChange = e => {
-    setState(s => ({ ...s, [e.target.name]: e.target.value }))   //what does this line   Confusion!  
+    setState(s => ({ ...s, [e.target.name]: e.target.value }))   /
     // console.log(state)
   }
   const Navigate = useNavigate();
@@ -127,8 +126,6 @@ function CreateAccounts() {
     try {
       console.log(accountData)
       const docRef = await setDoc(doc(firestore, "accounts", state.id), accountData);
-      // await setDoc(doc(firestore, "transactions", transactionData.id), transactionData)
-      // console.log("Document written with ID: ", docRef.id);
       console.log(accountData)
       console.log(docRef)
       toast.success(`Dear ${accountData.fullName} , your Account has been Created against Account # ${accountData.accountNumber}`, {
@@ -185,25 +182,7 @@ function CreateAccounts() {
     setState(initialState);
   }
 
-
-  // const createTransaction = async () => {
     console.log("account",state)
-
-
-
-  //   // transactionData.dateCreated = serverTimestamp()
-  //   // transactionData.id = Math.random().toString(36).slice(2)
-  //   // transactionData.account=state.accountNumber;
-  //   // transactionData.type='credit';
-  //   // transactionData.createdBy = {
-  //   //   fullName:state.fullName,
-
-  //   // }
-
-
-  // }
-
-
 
   return (
     <div className='container createAccount'>
