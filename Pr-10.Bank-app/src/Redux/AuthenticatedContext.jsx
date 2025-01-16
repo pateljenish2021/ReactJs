@@ -1,4 +1,4 @@
-import React, { createContext, useState, useEffect } from 'react'      //diff b/w createContext and UseContext?
+import React, { createContext, useState, useEffect } from 'react'      
 import { onAuthStateChanged } from 'firebase/auth';
 import { auth } from '../Config/Firebase';
 export const AuthenticatedContext = createContext();
