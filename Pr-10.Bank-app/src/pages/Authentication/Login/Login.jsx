@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useContext } from 'react'
-// import { useNavigate } from "react-router-dom";
 import { AuthenticatedContext } from '../../../Redux/AuthenticatedContext';
 import { Link } from "react-router-dom"
 import { toast } from 'react-toastify';
@@ -27,10 +26,6 @@ function Login() {
     // setUser(auth.currentUser)
     onAuthStateChanged(auth, (user) => {
       if (user) {
-        // User is signed in, see docs for a list of available properties
-        // https://firebase.google.com/docs/reference/js/firebase.User
-        // const uid = user.uid;
-        // console.log(user)
         setUser(user)
         setUserId(user.uid)
         // console.log(user.uid)
