@@ -4,7 +4,6 @@ import { collection, getDocs, query, where } from "firebase/firestore";
 import { firestore } from '../../Config/Firebase';
 import { AuthenticatedContext } from '../../Redux/AuthenticatedContext';
 import { Rings } from "react-loader-spinner";
-// import { collection, getDocs,query, where } from "firebase/firestore";
 function Dashboard() {
   const { user } = useContext(AuthenticatedContext)
   const [totalAccounts, setTotalAccounts] = useState(0)
@@ -28,19 +27,16 @@ function Dashboard() {
 
     const transactionsRef = collection(firestore, "transactions");
     const qt = query(transactionsRef, where("createdBy.uid", "==", user.uid));
-    const querySnapshottransactions = await getDocs(qt);  // Note: Key line for Reading data
+    const querySnapshottransactions = await getDocs(qt);  
 
     querySnapshotaccounts.forEach((doc) => {
-      // console.log(doc.data().userId)
-      arrayAccounts.push(doc.data())   //Also must Note this line
+
+      arrayAccounts.push(doc.data())   
     });
     let credit = 0;
     let debit = 0;
     querySnapshottransactions.forEach((doc) => {
-      // console.log("doc", doc.data())
-      // array.push(doc.data())
-      // console.log(doc.data().createdBy.uid)
-      arrayTransactions.push(doc.data())   //Also must Note this line
+      arrayTransactions.push(doc.data())   
       if (doc.data().type === "credit") {
         credit = credit + parseInt(doc.data().amount)
         // console.log("credit" ,credit)
@@ -52,16 +48,13 @@ function Dashboard() {
     setTotalCredit(credit)
     setTotalDebit(debit)
 
-    // setDocuments(arrayAccounts)
-    // setIsLoading(false)
-    // console.log(arrayAccounts)
-    // console.log(arrayTransactions)
+
     setTotalAccounts(arrayAccounts.length)
     setTotalTransactions(arrayTransactions.length)
     setIsLoading(false)
   }
 
-  useEffect(() => {     //Note this point carefully also
+  useEffect(() => {     
     readDocs()
   }, [])
 
