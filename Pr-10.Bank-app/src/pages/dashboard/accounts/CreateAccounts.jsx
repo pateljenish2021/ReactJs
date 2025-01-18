@@ -29,7 +29,7 @@ function CreateAccounts() {
 
   const [state, setState] = useState(initialState);
   const handleChange = e => {
-    setState(s => ({ ...s, [e.target.name]: e.target.value }))   /
+    setState(s => ({ ...s, [e.target.name]: e.target.value }))   
     // console.log(state)
   }
   const Navigate = useNavigate();
