@@ -1,0 +1,76 @@
+.loginimg{
+    transform: rotate(90deg);
+   height: 350px;
+   width: auto;
+   margin-top: 80px;
+}
+
+.dffdddf{
+    display: flex;
+    justify-content: center;
+
+}
+
+.google_btn img{
+    height: 30px;
+    width: auto;
+    margin-right: 10px;
+}
+
+.google_btn{
+    background-color: white !important;
+    border: none;
+    padding: 10px 30px;
+    border-radius: 999px;
+    border: 1px solid #000;
+    justify-content: space-around;
+    color: #000 !important;
+}
+
+.google_btn:hover{
+    border: 1px solid #F582AE;
+}
+
+.form__group input{
+
+    width: 60%;
+    border: none;
+    outline: none;
+    padding: 10px 30px;
+    border: 1px solid #000;
+    border-radius: 999px;
+}
+
+.form__group input:focus{
+    border: 1px solid #000;
+    outline: none;
+}
+
+.OR{
+    margin: 30px 0px;
+}
+
+.auth__btn{
+    background-color: #F582AE;
+    padding: 10px 30px;
+    border-radius: 999px;
+    border: navy;
+    color: #fff;
+    margin-top: 30px;
+    transition: 0.4s;
+    border: 1px solid #F582AE;
+    margin-bottom: 20px;
+}
+
+.auth__btn:hover{
+    color: #F582AE;
+    background-color: #fff;
+}
+
+.m-auto{
+    background-color: #fff;
+    border-radius: 20px;
+    border: 1px solid #000;
+    padding-bottom: 30px;
+    margin-top: 0px;
+}
