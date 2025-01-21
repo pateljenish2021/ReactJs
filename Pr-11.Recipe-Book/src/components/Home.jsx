@@ -23,7 +23,6 @@ const Home = () => {
     navigate("/recipes");
   };
 
-  // Fetch all recipes but only display the first 6
   const { data: products, loading } = useGetData("recipes");
   const limitedProducts = products?.slice(0, 6);
 
